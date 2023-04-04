@@ -1,0 +1,39 @@
+/*the nav element is used to create the navigation menu bar.
+The ul and li elements are used to create an unordered list of links,
+with each link (a element) contained within an li element.
+*/
+html,body{font-family:Verdana,sans-serif;font-size:20px;line-height:1.5}
+
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
+
+nav {  background-color: black;}
+nav ul {  list-style: none;  margin: 0;  padding: 0;  display: flex;
+justify-content: space-around; /* align the items horizontally */
+  align-items: center; /* align the items vertically */
+  background-color: black;}
+nav li {  display: inline-block;  margin-right: 40px}
+nav li a {display: inline-block;text-align: center;  color: white; padding: 10px; font-size: 25px;  text-decoration: none;}
+nav li a:hover {  color: green;}
+nav li a img {/*I've used the img element inside the a element of each link to insert an image for each menu item*/
+  height: 40px; /* Set the height of each image*/
+  margin-right: 5px;} /* Add some space between the image and the link text */
+nav li a span { font-size: 25px;text-align:left;vertical-align:top} /* Set the font size of the text label to 14 pixels */
+
+.button {  display: inline-flex;
+  align-items: center;  justify-content: center;  padding: 10px 20px;
+  border-radius: 5px;  background-color: #008CBA;  color: #fff;
+  text-decoration: none;  font-size: 30px;}
+.button img {  display: block;  height: 100%;  max-height: 70px;  margin-right: 10px;}
+.text {  display: inline-block;}
+
+
+
+.image-container {display: flex;} /* Use flexbox to arrange images in a row */
+.image {width: 33%; /* Set the width of each image to one-third of the container */
+        padding: 10px;} /* Add some padding to the images */
+
+table {  border-collapse: collapse;  border: 1px solid #ccc;  margin: left;}
+
+th, td {  text-align: center;  padding: 10px;  border: 2px solid #ccc; font-size: 30px;}
+
+

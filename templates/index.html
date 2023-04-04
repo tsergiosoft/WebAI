@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My AI App - Home</title>
+	<link rel="stylesheet" type="text/css" href="\static\style.css">
+</head>
+<body>
+	<nav>
+      <ul>
+			<li><a href="{{ url_for('index') }}"><img src="\static\images\home-icon.jpg" alt="Home"><span>Home</span></a></li>
+            <li><a href="{{ url_for('about') }}"><img src="\static\images\about-icon.jpg" alt="About"><span>About</span></a></li>
+      </ul>
+	</nav>
+
+	<h1>Welcome to my AI app!</h1>
+
+	<h2>To start AI recognizing - upload you handwrite images</h2>
+
+	<table border="1">
+		<tr>
+		<td>
+			<form method="post" enctype="multipart/form-data">
+				<input type="file" onchange="this.form.submit()" name="file1">
+			</form>
+		</td>
+		<td>
+			<form method="post" enctype="multipart/form-data">
+				<input type="file" onchange="this.form.submit()" name="file2">
+			</form>
+		</td>
+		<td>
+			<form method="post" enctype="multipart/form-data">
+				<input type="file" onchange="this.form.submit()" name="file3">
+			</form>
+		</td>
+	  	</tr>
+		<tr>
+		<td> <img src="\static\upl_file1.jpg" alt="Image 1" width="200" height="150">	</td>
+		<td> <img src="\static\upl_file2.jpg" alt="Image 2" width="200" height="150">	</td>
+		<td> <img src="\static\upl_file3.jpg" alt="Image 3" width="200" height="150">	</td>
+	  	</tr>
+		<tr>
+		<td> {{ res1 }} </td>
+		<td> {{ res2 }} </td>
+		<td> {{ res3 }} </td>
+	  	</tr>
+	</table>
+<p>
+
+</p>
+	<form action="/analyze_images/" method="post">
+		  <button class="button">
+    		<img src="\static\images\robot.jpg" alt="Button Image"><span>Click to recognize</span>
+  		  </button>
+	</form>
+	<form action="/learn_model/" method="post">
+		  <button class="button">
+    		<span>Click to Learm</span>
+
+  		  </button>
+	</form>
+	<p>
+		{{ learning }}
+	</p>
+</body>
+</html>
