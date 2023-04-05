@@ -124,8 +124,8 @@ class brain_AI:
 
 
         # training the model and save
-        # history = model.fit(X_train, train_labels, batch_size=128, epochs=20,verbose=2,validation_data=(X_test, test_labels))
-        # model.save(self.model_path)
+        history = model.fit(X_train, train_labels, batch_size=128, epochs=20,verbose=2,validation_data=(X_test, test_labels))
+        model.save(self.model_path)
 
         #Change shape for CNN model
         X_train = X_train.reshape(X_train.shape[0], 28, 28, 1)
