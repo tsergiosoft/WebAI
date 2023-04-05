@@ -39,7 +39,9 @@ class brain_AI:
         images = np.zeros(shape=(3, 28, 28))
         # Load image and convert to grayscale
         for i in range(3):
-            f = os.path.join('static', 'upl_file' + str(i + 1) + '.jpg')
+            current_file_directory = os.path.dirname(__file__)
+            f = os.path.normpath(os.path.join(current_file_directory, 'static/'+'upl_file' + str(i + 1) + '.jpg'))
+            # f = os.path.join('static', 'upl_file' + str(i + 1) + '.jpg')
             img = Image.open(f).convert('L').resize((28, 28))
             # Invert the image
             # img = Image.invert(img)
@@ -54,9 +56,6 @@ class brain_AI:
         predict.append(np.around(model1.predict(images), decimals=2))
         predict.append(np.around(model2.predict(images), decimals=2))
         predict.append(np.around(model3.predict(images), decimals=2))
-        # cat = np.around(model4.predict(images), decimals=2)
-        # predicted_digit = np.argmax(cat,axis=1)
-        # print(predict)
 
         self.res1 = predict[0]
         self.res2 = predict[1]
