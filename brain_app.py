@@ -17,11 +17,17 @@ class brain_AI:
         self.res2 = ''
         self.res3 = ''
         self.learn_active = 'no learning'
-        save_dir = "./model/"
-        self.model_path = os.path.join(save_dir, 'model1.h5')
-        self.model2_path = os.path.join(save_dir, 'model2.h5')
-        self.model3_path = os.path.join(save_dir, 'model3.h5')
-        self.model4_path = os.path.join(save_dir, 'model4.h5')
+        # save_dir = "model/"
+        current_file_directory = os.path.dirname(__file__)
+        save_dir = os.path.join(current_file_directory, 'model/')
+
+        self.model_path = os.path.normpath(os.path.join(save_dir, 'model1.h5'))
+        self.model2_path = os.path.normpath(os.path.join(save_dir, 'model2.h5'))
+        self.model3_path = os.path.normpath(os.path.join(save_dir, 'model3.h5'))
+
+        # self.model_path = os.path.join(save_dir, 'model1.h5')
+        # self.model2_path = os.path.join(save_dir, 'model2.h5')
+        # self.model3_path = os.path.join(save_dir, 'model3.h5')
         self.learn_thread = threading.Thread()
 
     def analyze_uploaded_images(self):
@@ -29,7 +35,6 @@ class brain_AI:
         model1 = keras.models.load_model(self.model_path)
         model2 = keras.models.load_model(self.model2_path)
         model3 = keras.models.load_model(self.model3_path)
-        model4 = keras.models.load_model(self.model4_path)
 
         images = np.zeros(shape=(3, 28, 28))
         # Load image and convert to grayscale
